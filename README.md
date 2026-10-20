@@ -30,7 +30,7 @@ La arquitectura está optimizada para ejecutarse en entornos con recursos limita
     +-----------------------------------------------------------------------+
     |                     Análisis & Threat Hunting                         |
     |  - Consola SIEM / Indexador (Wazuh Cloud / Elastic / SIEM Local)      |
-    |  - Asistencia con Inteligencia Artificial (Analista Táctico)           |
+    |  - Asistencia con Inteligencia Artificial (Analista Táctico)          |
     |  - Reglas de Detección en formato SIGMA / Mapeo a MITRE ATT&CK        |
     +-----------------------------------------------------------------------+
 
