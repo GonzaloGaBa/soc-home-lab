@@ -91,3 +91,16 @@ Investigación de la telemetría de red para auditar conexiones salientes genera
   * `Initiated`: `true` (Conexión iniciada desde el host local)[cite: 7]
 * **Evidencia de Detección (Sysmon Event ID 3):**
   ![Telemetría de Red Sysmon](docs/fase4-telemetria-red.png)
+
+---
+
+## 📌 Fase 5: Ingeniería de Detección (Reglas SIGMA)
+
+Traducción de los hallazgos de investigación en reglas de detección estandarizadas para alertar sobre actividades de reconocimiento en el endpoint.
+
+* **Herramienta / Formato:** Reglas SIGMA (YAML)
+* **Ubicación en el repositorio:** `detections/detect-recon-discovery.yml`
+* **Mapeo MITRE ATT&CK:** 
+  * `T1087` (Account Discovery)
+  * `T1057` (Process Discovery)
+* **Lógica de la Detección:** Monitoreo de Sysmon (Event ID 1) filtrando patrones en la línea de comandos (`CommandLine`) asociados a la ejecución simultánea o individual de `whoami`, `net user` y `tasklist`.
