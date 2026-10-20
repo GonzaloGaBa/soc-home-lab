@@ -113,3 +113,12 @@ Simulación del ciclo de triaje y documentación de respuesta ante incidentes (I
 
 * **Ubicación del Reporte:** [`incidents/INC-2026-001-reconnaissance.md`](incidents/INC-2026-001-reconnaissance.md)
 * **Resumen de Investigación:** Análisis de eventos de proceso (Sysmon Event ID 1) y tráfico de red (Event ID 3), extracción de IoCs y definición de mitigación para técnicas MITRE T1087 y T1057.
+
+---
+
+## 📌 Fase 7: Gestión de Configuraciones y Despliegue
+
+Documentación de los perfiles de auditoría y archivos de configuración aplicados para garantizar la repetibilidad del entorno.
+
+* **Ubicación de Configuración:** [`configs/sysmon-config-notes.md`](configs/sysmon-config-notes.md)
+* **Perfil Utilizado:** Mapeo de reglas basadas en SwiftOnSecurity para captura fina de Event IDs 1, 3, 11 y 22.
