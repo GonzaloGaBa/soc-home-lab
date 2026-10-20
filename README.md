@@ -8,31 +8,31 @@ Laboratorio práctico de ciberseguridad defensiva diseñado para simular flujos 
 
 La arquitectura está optimizada para ejecutarse en entornos con recursos limitados (8 GB de RAM), utilizando una estructura híbrida basada en telemetría de endpoints y análisis estructurado:
 
-    +-----------------------------------------------------------------------+
-    |                         DELLGON (Host OS)                             |
-    |                    Windows 11 Home (8 GB RAM)                         |
-    |                                                                       |
-    |  +---------------------------+     +-------------------------------+  |
-    |  |    Fuentes de Telemetría  |     |     Generación de Eventos     |  |
-    |  | - Windows Event Logs      |     | - PowerShell Attack Scripts   |  |
-    |  | - Sysmon (SwiftOnSecurity)| --> | - Atomic Red Team (Atómicos)  |  |
-    |  +---------------------------+     +-------------------------------+  |
-    |               |                                                       |
-    |               v                                                       |
-    |  +-----------------------------------------------------------------+  |
-    |  |                  Recolector y Procesador                        |  |
-    |  | - Agente de Recopilación (Wazuh Agent / Log Parser / Python)    |  |
-    |  +-----------------------------------------------------------------+  |
-    |               |                                                       |
-    +---------------|-------------------------------------------------------+
-                    |
-                    v (Telemetría / Alertas)
-    +-----------------------------------------------------------------------+
-    |                     Análisis & Threat Hunting                         |
-    |  - Consola SIEM / Indexador (Wazuh Cloud / Elastic / SIEM Local)      |
-    |  - Asistencia con Inteligencia Artificial (Analista Táctico)          |
-    |  - Reglas de Detección en formato SIGMA / Mapeo a MITRE ATT&CK        |
-    +-----------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+|                         DELLGON (Host OS)                             |
+|                    Windows 11 Home (8 GB RAM)                         |
+|                                                                       |
+|  +---------------------------+     +-------------------------------+  |
+|  |    Fuentes de Telemetría  |     |     Simulación de Ataque      |  |
+|  | - Windows Event Logs      |     | - Comandos Nativos (LOLBins)  |  |
+|  | - Sysmon (SwiftOnSecurity)| --> | - PowerShell / CMD            |  |
+|  +---------------------------+     +-------------------------------+  |
+|               |                                                       |
+|               v                                                       |
+|  +-----------------------------------------------------------------+  |
+|  |                 Captura y Filtrado Local                        |  |
+|  | - Windows Event Viewer / Telemetría de Sysmon (Event IDs 1, 3)  |  |
+|  +-----------------------------------------------------------------+  |
+|               |                                                       |
++---------------|-------------------------------------------------------+
+                |
+                v (Eventos Registrados)
++-----------------------------------------------------------------------+
+|                     Análisis & Threat Hunting                         |
+|  - Triaje de Eventos y Extracción de IoCs                             |
+|  - Asistencia con Inteligencia Artificial (Analista Táctico)          |
+|  - Reglas de Detección en formato SIGMA / Mapeo a MITRE ATT&CK        |
++-----------------------------------------------------------------------+
 
 ---
 
