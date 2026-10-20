@@ -8,6 +8,7 @@ Laboratorio práctico de ciberseguridad defensiva diseñado para simular flujos 
 
 La arquitectura está optimizada para ejecutarse en entornos con recursos limitados (8 GB de RAM), utilizando una estructura híbrida basada en telemetría de endpoints y análisis estructurado:
 
+```text
 +-----------------------------------------------------------------------+
 |                         DELLGON (Host OS)                             |
 |                    Windows 11 Home (8 GB RAM)                         |
@@ -33,6 +34,7 @@ La arquitectura está optimizada para ejecutarse en entornos con recursos limita
 |  - Asistencia con Inteligencia Artificial (Analista Táctico)          |
 |  - Reglas de Detección en formato SIGMA / Mapeo a MITRE ATT&CK        |
 +-----------------------------------------------------------------------+
+``` 
 
 ---
 
