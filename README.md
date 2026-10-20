@@ -71,3 +71,23 @@ Ejecución controlada de actividades de reconocimiento (*Discovery*) utilizando 
 * **Comando:** `tasklist`
 * **Evidencia Sysmon (Event ID 1):**
   ![Simulación Tasklist](docs/fase3-simulacion-reconocimiento-taklist.png)
+
+---
+
+## 📌 Fase 4: Análisis de Conexiones de Red (Sysmon Event ID 3)
+
+Investigación de la telemetría de red para auditar conexiones salientes generadas por procesos del sistema, permitiendo identificar consultas DNS, tráfico sospechoso o comunicación con posibles infraestructuras de comando y control (*C2*).
+
+* **Técnica simulada (MITRE ATT&CK):** 
+  * `T1016` (System Network Configuration Discovery).
+* **Comando ejecutado:**
+  ```powershell
+  nslookup github.com
+  ```
+* **Campos clave analizados:**
+  * `Image`: `C:\Windows\System32\nslookup.exe`
+  * `Protocol`: `udp`[cite: 7]
+  * `DestinationPort`: `53` (Servicio DNS)[cite: 7]
+  * `Initiated`: `true` (Conexión iniciada desde el host local)[cite: 7]
+* **Evidencia de Detección (Sysmon Event ID 3):**
+  ![Telemetría de Red Sysmon](docs/fase4-telemetria-red.png)
