@@ -104,3 +104,12 @@ Traducción de los hallazgos de investigación en reglas de detección estandari
   * `T1087` (Account Discovery)
   * `T1057` (Process Discovery)
 * **Lógica de la Detección:** Monitoreo de Sysmon (Event ID 1) filtrando patrones en la línea de comandos (`CommandLine`) asociados a la ejecución simultánea o individual de `whoami`, `net user` y `tasklist`.
+
+---
+
+## 📌 Fase 6: Gestión de Incidentes y Reportes de Triaje
+
+Simulación del ciclo de triaje y documentación de respuesta ante incidentes (IR) frente a las alertas de reconocimiento generadas.
+
+* **Ubicación del Reporte:** [`incidents/INC-2026-001-reconnaissance.md`](incidents/INC-2026-001-reconnaissance.md)
+* **Resumen de Investigación:** Análisis de eventos de proceso (Sysmon Event ID 1) y tráfico de red (Event ID 3), extracción de IoCs y definición de mitigación para técnicas MITRE T1087 y T1057.
