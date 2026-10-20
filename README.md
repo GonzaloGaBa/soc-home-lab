@@ -99,7 +99,7 @@ Investigación de la telemetría de red para auditar conexiones salientes genera
 Traducción de los hallazgos de investigación en reglas de detección estandarizadas para alertar sobre actividades de reconocimiento en el endpoint.
 
 * **Herramienta / Formato:** Reglas SIGMA (YAML)
-* **Ubicación en el repositorio:** `detections/detect-recon-discovery.yml`
+* **Ubicación en el repositorio:** [`detections/detect-recon-discovery.yml`](detections/detect-recon-discovery.yml)
 * **Mapeo MITRE ATT&CK:** 
   * `T1087` (Account Discovery)
   * `T1057` (Process Discovery)
