@@ -1,6 +1,6 @@
 # SOC Home Lab — Threat Detection & Incident Response
 
-Laboratorio práctico de ciberseguridad defensiva diseñado para simular flujos de trabajo de un Analista SOC Tier 1/2, abarcando recolección de telemetría, investigación de incidentes, ingeniería de detección y documentación técnica.
+Análisis defensivo de telemetría en Windows, reglas SIGMA y documentación de incidentes alineada a MITRE ATT&CK.
 
 ---
 
