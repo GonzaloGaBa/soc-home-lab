@@ -1,4 +1,4 @@
-# SOC Home Lab - Defensive Security & Tier 1/2 Analysis
+# SOC Home Lab — Threat Detection & Incident Response
 
 Laboratorio práctico de ciberseguridad defensiva diseñado para simular flujos de trabajo de un Analista SOC Tier 1/2, abarcando recolección de telemetría, investigación de incidentes, ingeniería de detección y documentación técnica.
 
