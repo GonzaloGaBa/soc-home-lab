@@ -76,7 +76,7 @@ Análisis de conexiones de red registradas por Sysmon durante la ejecución cont
 
 ## 📌 Fase 5: Ingeniería de Detección (Reglas Sigma)
 
-Regla experimental que busca coincidencias individuales en el campo CommandLine. No correlaciona múltiples eventos ni demuestra ejecución simultánea.
+Regla Sigma experimental que identifica eventos individuales de creación de procesos mediante el campo Image y, para la enumeración de cuentas, evalúa también los argumentos mediante CommandLine. No correlaciona múltiples eventos ni identifica una secuencia de comandos.
 
 * **Herramienta / Formato:** Reglas Sigma (YAML)
 * **Ubicación en el repositorio:** [`detections/detect-recon-discovery.yml`](detections/detect-recon-discovery.yml)
@@ -85,8 +85,7 @@ Regla experimental que busca coincidencias individuales en el campo CommandLine.
   * `T1087.001` — Account Discovery: Local Account.
   * `T1057` — Process Discovery.
 
-* **Lógica de detección:** Búsqueda de patrones en el campo `CommandLine` de eventos de creación de procesos de Sysmon (Event ID 1), relacionados con `whoami`, `net user` y `tasklist`. Cada evento se evalúa individualmente; la regla no correlaciona una secuencia de comandos.
-
+* **Lógica de detección:**  Selección de eventos de Sysmon (Event ID 1) correspondientes a `whoami.exe` , `tasklist.exe` y ejecuciones de `net.exe` o `net1.exe` cuya línea de comandos termina en user. La selección de cuentas no cubre todas las variantes posibles. La validación de sintaxis, conversión y funcionamiento permanece pendiente.
 
 ---
 
@@ -101,7 +100,7 @@ Simulación del ciclo de triaje y documentación de respuesta ante incidentes (I
 
 ## 📌 Fase 7: Gestión de Configuraciones y Despliegue
 
-Documentación de los perfiles de auditoría y archivos de configuración aplicados para garantizar la repetibilidad del entorno.
+Contenido documentado: Configuración base de SwiftOnSecurity, eventos de interés, instalación inicial de Sysmon y actualización de configuración. La captura efectiva depende de los filtros aplicados.
 
 * **Ubicación de Configuración:** [`configs/sysmon-config-notes.md`](configs/sysmon-config-notes.md)
 * **Perfil Utilizado:** Mapeo de reglas basadas en SwiftOnSecurity para captura fina de Event IDs 1 y 3.
