@@ -1,7 +1,7 @@
 # 📄 Reporte de ejercicio simulado: INC-2026-001
 
-**Fecha/Hora del Incidente:** 2026-10-20 15:24:41 UTC  
-**Severidad:** Media (Medium)  
+**Fecha/hora de referencia del ejercicio** 2026-10-20 15:24:41 UTC  
+**Clasificación: ejercicio de laboratorio; sin severidad de incidente real asignada:** Media (Medium)  
 **Estado:** Ejercicio finalizado; sin incidente real  
 **Analista Asignado:** Gonzalo Barrientos — autor y analista del ejercicio  
 
@@ -13,22 +13,22 @@ Se documentó un ejercicio autorizado de descubrimiento en un equipo Windows del
 ---
 
 ## 2. Detalles del Host y Usuario
-* **Host Afectado:** `DESKTOP-KI9I8QM`
+* **Host del laboratorio:** `DESKTOP-KI9I8QM`
 * **Dirección IP:** `192.168.1.68`
 * **Usuario Activo:** `DESKTOP-KI9I8QM\Gonzalo`
 * **Sistema Operativo:** Windows 11 Home
 
 ---
 
-## 3. Indicadores de Compromiso (IoCs) & Telemetría
-A través de la ingesta de **Sysmon (Event ID 1 y Event ID 3)**, se identificaron los siguientes eventos clave:
+## 3. Evidencias y telemetría del ejercicio
+Mediante la revisión local de eventos de Sysmon en el Visor de eventos de Windows, se documentaron las siguientes ejecuciones y conexiones:
 
-| Event ID | Proceso Padre | Proceso Ejecutado | Línea de Comandos / Detalles | Mapeo MITRE ATT&CK |
+| Event | Proceso | Ejecución o detalle | Mapeo principal |
 | :--- | :--- | :--- | :--- | :--- |
-| **1** | `cmd.exe` | `whoami.exe` | `whoami /all` | T1087 - Account Discovery |
-| **1** | `cmd.exe` | `net.exe` | `net user` | T1087 - Account Discovery |
-| **1** | `cmd.exe` | `tasklist.exe` | `tasklist` | T1057 - Process Discovery |
-| **3** | `cmd.exe` | `nslookup.exe` | Destino: `186.130.128.250:53` (UDP) | T1016 - Network Config Discovery |
+| **1** | `whoami.exe` | `whoami /all` |  T1033 — Descubrimiento del propietario/usuario del sistema |
+| **1** | `net.exe` | `net user` |  T1087.001 — Cuenta local |
+| **1** | `tasklist.exe` | `tasklist` | T1057 — Descubrimiento de procesos |
+| **3** | `nslookup.exe` | `UDP hacia186.130.128.250:53` | Sin técnica asignada con esta evidencia |
 
 ---
 
