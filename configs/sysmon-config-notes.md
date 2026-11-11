@@ -9,8 +9,6 @@ Este laboratorio utiliza la plantilla optimizada de **SwiftOnSecurity** para la 
 ## 🎯 Event IDs Monitoreados en el Lab
 * **Event ID 1:** Creación de Procesos (*Process Creation*).
 * **Event ID 3:** Conexión de Red (*Network Connection*).
-* **Event ID 11:** Creación de Archivos (*File Create*).
-* **Event ID 22:** Consultas DNS (*DNS Query*).
 
 ## 🚀 Comando de Despliegue / Actualización
 Para aplicar o actualizar la configuración en el host local:
