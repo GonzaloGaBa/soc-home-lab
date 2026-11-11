@@ -3,12 +3,13 @@ id: soc-home-lab-001
 status: experimental
 description: Detecta el uso de comandos nativos de Windows (LOLBins) comúnmente utilizados por atacantes para reconocimiento de cuentas y procesos (MITRE ATT&CK T1087 / T1057).
 author: Gonzalo Barrientos (SOC Home Lab)
-date: 2026/10/20
+date: 2026-10-20
 references:
     - https://github.com/GonzaloGaBa/soc-home-lab
 tags:
     - attack.discovery
-    - attack.t1087
+    - attack.t1033
+    - attack.t1087.001
     - attack.t1057
 logsource:
     product: windows
