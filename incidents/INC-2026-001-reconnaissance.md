@@ -1,14 +1,14 @@
-# 📄 Reporte de Incidente: INC-2026-001
+# 📄 Reporte de ejercicio simulado: INC-2026-001
 
 **Fecha/Hora del Incidente:** 2026-10-20 15:24:41 UTC  
 **Severidad:** Media (Medium)  
-**Estado:** Cerrado / Mitigado  
-**Analista Asignado:** Gonzalo Barrientos (SOC Analyst Tier 1/2)  
+**Estado:** Ejercicio finalizado; sin incidente real  
+**Analista Asignado:** Gonzalo Barrientos — autor y analista del ejercicio  
 
 ---
 
 ## 1. Resumen Ejecutivo
-Se detectó la ejecución secuencial de comandos nativos de reconocimiento (*LOLBins*) en el host de un usuario final. El patrón observado sugiere una etapa inicial de descubrimiento de sistema y cuentas por parte de un actor no autorizado o una simulación de ataque. No se evidenció persistencia ni elevación de privilegios en el sistema.
+Se documentó un ejercicio autorizado de descubrimiento en un equipo Windows del laboratorio. Se ejecutaron comandos nativos y se revisó la telemetría disponible en Sysmon mediante el Visor de eventos. El objetivo fue practicar el análisis de evidencias y la documentación técnica. Las ejecuciones fueron simuladas y no constituyen evidencia de una intrusión real.
 
 ---
 
@@ -40,6 +40,6 @@ A través de la ingesta de **Sysmon (Event ID 1 y Event ID 3)**, se identificaro
 ---
 
 ## 5. Medidas de Mitigación y Recomendaciones
-* **Regla de Detección Creada:** Se implementó la regla SIGMA `detect-recon-discovery.yml` en la carpeta `detections/` para alertar automáticamente ante futuras ejecuciones de este patrón.
+* **Regla de Detección Creada:** Se redactó una regla Sigma experimental relacionada con los comandos estudiados. Su conversión, despliegue y validación en un motor de detección quedan pendientes; este reporte no acredita la generación de alertas automáticas.
 * **Aislamiento/Contención:** No se requiere aislamiento del host al tratarse de un ejercicio en entorno controlado (*Home Lab*).
 * **Acciones Preventivas:** Monitorear cuentas locales y limitar la ejecución de scripts no firmados mediante políticas de restricción de software.
