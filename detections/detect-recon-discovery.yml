@@ -1,10 +1,6 @@
 title: Comandos de Reconocimiento Local Detectados (Discovery)
-id: soc-home-lab-001
+id: ce828a17-4b0c-454e-a81d-eee44ee88725
 status: experimental
-description: Detecta el uso de comandos nativos de Windows (LOLBins) comúnmente utilizados por atacantes para reconocimiento de cuentas y procesos (MITRE ATT&CK T1087 / T1057).
-author: Gonzalo Barrientos (SOC Home Lab)
-date: 2026-10-20
-references:
     - https://github.com/GonzaloGaBa/soc-home-lab
 tags:
     - attack.discovery
@@ -15,14 +11,23 @@ logsource:
     product: windows
     service: sysmon
 detection:
-    selection_process:
+    selection_identity:
         EventID: 1
-    selection_cmds:
-        CommandLine|contains:
-            - 'whoami'
-            - 'net user'
-            - 'tasklist'
-    condition: selection_process and selection_cmds
+        Image|endswith: '\whoami.exe'
+    selection_processes:
+        EventID: 1
+        Image|endswith: '\tasklist.exe'
+    selection_accounts:
+        EventID: 1
+        Image|endswith:
+            - '\net.exe'
+            - '\net1.exe'
+        CommandLine|re: '(?i)\s+user\s*$'
+    condition: selection_identity or selection_processes or selection_accounts
+description: Identificación de ejecutables mediante el campo y, para la enumeración de cuentas, evaluación de argumentos mediante CommandLine. Cada evento se evalúa individualmente; no se correlacionan secuencias de comandos.
+level: low
+
 falsepositives:
-    - Administradores de sistemas ejecutando tareas legítimas de auditoría.
-level: medium
+    - Tareas legítimas de administración, soporte e inventario.
+    - Scripts autorizados de auditoría.
+    - Ejercicios de laboratorio y consultas interactivas del usuario.
